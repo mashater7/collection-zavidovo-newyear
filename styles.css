@@ -63,3 +63,4 @@
   100%{transform:translate3d(var(--end-drift),var(--snow-distance,940px),0);opacity:0}
 }
 @media(prefers-reduced-motion:reduce){#colsplit[data-festive] .ny-snow{display:none!important}#colsplit[data-festive] .ny-snow i{animation:none!important}}
+@media(max-width:860px), (hover:none) and (pointer:coarse){#colsplit[data-festive] .ny-snow,#colsplit[data-festive] .ny-snow-toggle{display:none!important}}
