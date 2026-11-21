@@ -1,0 +1,78 @@
+/* Hallmark · scope: component · tone: quiet festive signature · anchor hue: incumbent wine.
+   The photograph is the surface. Only the letter edges receive contrast support.
+   Audience: country-home buyers. Job: choose a settlement. No new controls or motion. */
+#colsplit[data-festive][data-campaign-concept] .ny-inline {
+  --signature-wine:#681c30; --signature-forest:#17382a; --signature-light:#fff4df;
+  top:calc(100% - 18px); bottom:auto; width:max-content; max-width:calc(100% - 32px);
+  height:60px; padding:0; gap:20px; border:0; outline:0; background:none;
+  box-shadow:none; border-radius:0; pointer-events:none; color:var(--signature-forest);
+  text-shadow:none; align-items:center; justify-content:center;
+}
+#colsplit[data-festive][data-campaign-concept] .ny-inline::before,
+#colsplit[data-festive][data-campaign-concept] .ny-inline::after {content:none}
+#colsplit[data-festive][data-campaign-concept] .ny-inline span {
+  background:none; border:0; outline:0; box-shadow:none;
+  paint-order:stroke fill; -webkit-text-stroke:.5px var(--signature-light);
+  text-shadow:0 1px 2px var(--signature-light);
+}
+#colsplit[data-festive][data-campaign-concept] .ny-inline>span.ny-campaign-title {
+  display:block; flex:none; color:var(--signature-forest);
+  font-family:var(--font); font-size:30px; font-weight:400; line-height:1.08;
+  letter-spacing:0; text-transform:none; text-align:center;
+}
+#colsplit[data-festive][data-campaign-concept] .ny-campaign-title span {
+  display:inline; font:inherit; letter-spacing:inherit; color:inherit;
+  -webkit-text-stroke:.35px currentColor;
+  text-shadow:0 1px 2px var(--signature-light),0 -1px 1px var(--signature-light);
+}
+#colsplit[data-festive][data-campaign-concept] .ny-campaign-amount {
+  display:flex; align-items:baseline; gap:8px; color:var(--signature-wine);
+}
+#colsplit[data-festive][data-campaign-concept] .ny-inline .ny-inline-small {
+  font:500 13px/1.2 'Montserrat',Arial,sans-serif; color:var(--signature-forest);
+  letter-spacing:0; white-space:nowrap;
+}
+#colsplit[data-festive][data-campaign-concept] .ny-inline .ny-inline-value {
+  font:500 42px/1 'Montserrat',Arial,sans-serif; color:var(--signature-wine);
+  letter-spacing:-.035em; -webkit-text-stroke:.6px var(--signature-light);
+  text-shadow:0 1px 2px var(--signature-light);
+}
+
+/* A: one open line, with the discount following the words like a signed statement. */
+#colsplit[data-festive][data-campaign-concept="line"] .ny-campaign-amount {
+  gap:10px;
+}
+
+/* B: one centered two-tier typographic mark, entirely open to the photograph. */
+#colsplit[data-festive][data-campaign-concept="mark"] .ny-inline {
+  top:calc(100% - 16px); flex-direction:column; height:82px; gap:2px;
+}
+#colsplit[data-festive][data-campaign-concept="mark"] .ny-inline>span.ny-campaign-title {
+  font-size:29px; line-height:1.18; color:var(--signature-wine);
+}
+#colsplit[data-festive][data-campaign-concept="mark"] .ny-campaign-amount {gap:11px}
+#colsplit[data-festive][data-campaign-concept="mark"] .ny-inline .ny-inline-value {font-size:44px}
+
+@media(max-width:860px) {
+  #colsplit[data-festive][data-campaign-concept] .ny-inline {
+    top:calc(100% + 10px); height:64px; gap:16px;
+  }
+  #colsplit[data-festive][data-campaign-concept] .ny-inline>span.ny-campaign-title {font-size:25px;line-height:1.1}
+  #colsplit[data-festive][data-campaign-concept="line"] .ny-campaign-title span {display:block}
+  #colsplit[data-festive][data-campaign-concept="line"] .ny-campaign-title {text-align:left}
+  #colsplit[data-festive][data-campaign-concept="line"] .ny-campaign-amount {
+    flex-direction:column; align-items:flex-start; gap:2px;
+  }
+  #colsplit[data-festive][data-campaign-concept] .ny-inline .ny-inline-value {font-size:40px}
+  #colsplit[data-festive][data-campaign-concept] .ny-inline .ny-inline-small {font-size:12px}
+  #colsplit[data-festive][data-campaign-concept="mark"] .ny-inline {top:calc(100% + 6px);height:80px;gap:2px}
+  #colsplit[data-festive][data-campaign-concept="mark"] .ny-inline>span.ny-campaign-title {font-size:26px;line-height:1.2}
+  #colsplit[data-festive][data-campaign-concept="mark"] .ny-inline .ny-inline-value {font-size:42px}
+}
+@media(max-width:359px) {
+  #colsplit[data-festive][data-campaign-concept="line"] .ny-inline {gap:12px;height:62px}
+  #colsplit[data-festive][data-campaign-concept="line"] .ny-inline>span.ny-campaign-title {font-size:23px}
+  #colsplit[data-festive][data-campaign-concept="line"] .ny-inline .ny-inline-value {font-size:38px}
+  #colsplit[data-festive][data-campaign-concept="mark"] .ny-inline>span.ny-campaign-title {font-size:23px}
+  #colsplit[data-festive][data-campaign-concept="mark"] .ny-inline .ny-inline-value {font-size:40px}
+}
