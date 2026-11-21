@@ -38,6 +38,7 @@
 #colsplit[data-festive] .ny-inline .ny-inline-small{font:400 14px/1.1 'Montserrat',Arial,sans-serif;color:var(--ny-campaign-ink)}
 #colsplit[data-festive] .ny-inline .ny-inline-value{font:500 48px/1 'Montserrat',Arial,sans-serif;letter-spacing:-.035em;color:var(--ny-campaign-ink);text-shadow:none;-webkit-text-stroke:0}
 #colsplit[data-festive] .ny-snow-toggle{background:rgba(16,39,29,.82)}
+#colsplit[data-festive]:not(.ny-fir-ready) .ny-branch{background-image:none}
 @media(max-width:1100px) and (min-width:861px){#colsplit[data-festive] .ny-branch{width:300px;height:104px;left:-24px}#colsplit[data-festive] .ny-branch.right{left:auto;right:-24px}}
 @media(max-width:860px){
  #colsplit[data-festive] .ny-branch{width:210px;height:73px;top:-4px;left:-38px}

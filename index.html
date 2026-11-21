@@ -38,6 +38,7 @@
 #colsplit[data-festive] .ny-inline .ny-inline-small{font:400 14px/1.1 'Montserrat',Arial,sans-serif;color:var(--ny-campaign-ink)}
 #colsplit[data-festive] .ny-inline .ny-inline-value{font:500 48px/1 'Montserrat',Arial,sans-serif;letter-spacing:-.035em;color:var(--ny-campaign-ink);text-shadow:none;-webkit-text-stroke:0}
 #colsplit[data-festive] .ny-snow-toggle{background:rgba(16,39,29,.82)}
+#colsplit[data-festive]:not(.ny-fir-ready) .ny-branch{background-image:none}
 @media(max-width:1100px) and (min-width:861px){#colsplit[data-festive] .ny-branch{width:300px;height:104px;left:-24px}#colsplit[data-festive] .ny-branch.right{left:auto;right:-24px}}
 @media(max-width:860px){
  #colsplit[data-festive] .ny-branch{width:210px;height:73px;top:-4px;left:-38px}
@@ -62,7 +63,7 @@
   100%{transform:translate3d(var(--end-drift),var(--snow-distance,940px),0);opacity:0}
 }
 @media(prefers-reduced-motion:reduce){#colsplit[data-festive] .ny-snow{display:none!important}#colsplit[data-festive] .ny-snow i{animation:none!important}}
-</style></head><body><div id="rec2410252031"><!-- ============================================================= -->
+</style><link rel="preload" as="image" href="assets/brand-59b6f2467b77.webp" media="(min-width:861px)" fetchpriority="high"></head><body><div id="rec2410252031"><!-- ============================================================= -->
 <!--  БЛОК «КОЛЛЕКЦИЯ ЗАВИДОВО» — главная (сплит-экран 3 посёлка)   -->
 <!--  Вставить в HTML-блок Tilda (T123). Самодостаточный.          -->
 <!--  Бриллиант на сайте должен вести на страницу с этим блоком.   -->
@@ -1133,7 +1134,7 @@ afterIntro(function(){if(document.readyState==='complete') play(); else window.a
  let wanted=!navigator.connection?.saveData,visible=true,lastHeight=0;
  try{const saved=localStorage.getItem(storageKey);if(saved!==null)wanted=saved==='on'}catch{}
  function particles(){
-  const count=mobile.matches?40:46,fragment=document.createDocumentFragment();
+  const count=mobile.matches?46:54,fragment=document.createDocumentFragment();
   for(let i=0;i<count;i++){
    const flake=document.createElement('i'),depth=i%3,duration=(mobile.matches?14:9)+(i*7%10),phase=(i*.61803398875)%1;
    flake.style.cssText=`--x:${((i*37.17+3.5)%98).toFixed(2)}%;--s:${[1.8,3,4.6][depth]}px;--o:${[.42,.66,.86][depth]};--d:${duration}s;--delay:-${(phase*duration).toFixed(2)}s;--drift:${[-24,32,-42,48][i%4]}px;--end-drift:${[-10,18,-22,28][i%4]}px`;
@@ -1152,6 +1153,14 @@ afterIntro(function(){if(document.readyState==='complete') play(); else window.a
  reduced.addEventListener('change',sync);mobile.addEventListener('change',particles);document.addEventListener('visibilitychange',pause);
  new IntersectionObserver(es=>{visible=es[0].isIntersecting;pause()},{threshold:0}).observe(root);
  new ResizeObserver(es=>{const height=Math.ceil(es[0].contentRect.height)+48;if(height!==lastHeight){lastHeight=height;root.style.setProperty('--snow-distance',height+'px')}}).observe(root);
+ function loadFir(){
+  const image=new Image();image.decoding='async';image.fetchPriority='low';
+  const show=()=>root.classList.add('ny-fir-ready');
+  image.onload=()=>image.decode().catch(()=>{}).then(show);image.onerror=show;
+  image.src=new URL('assets/frost-fir.webp',document.baseURI).href;
+ }
+ const photo=root.querySelector('.cs-panel picture img');
+ if(!photo||photo.complete)requestAnimationFrame(loadFir);else{photo.addEventListener('load',()=>requestAnimationFrame(loadFir),{once:true});photo.addEventListener('error',loadFir,{once:true})}
  particles();sync();pause();
 })();
 </script></body></html>
